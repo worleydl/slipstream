@@ -1,0 +1,12 @@
+api:
+    build: api/.
+    command: python app.py
+    ports:
+        - "5000:5000"
+    volumes:
+        - ./api:/code
+    links:
+        - redis
+
+redis:
+    image: redis
